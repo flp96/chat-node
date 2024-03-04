@@ -9,5 +9,5 @@ function btnEntrar() {
         meuId: idUsuario
     });
 
-    window.location.href="chat.html?usuarionome=" + inputNome + "&meuId=" + idUsuario;
+    window.location.href="chat.html?usuarionome=" + inputNome + "&meuid=" + idUsuario;
 }

@@ -1,7 +1,7 @@
-const express = require('expresse');
+const express = require('express');
 const path = require('path');
 const http = require('http');
-const {usuarioEntrarSala, getUsuariosSala, mensagemFormatada, getUsuario, usuarioSairSala} = require ('./usuario');
+const {usuarioEntrarSala, getUsuariosSala, mensagemFormatada, getUsuario, usuarioSairSala} = require('./usuarios');
 const socketIO = require('socket.io');
 const app = express();
 const server = http.createServer(app);
@@ -37,4 +37,4 @@ io.on('connection', socket => {
     })
 });
 
-server.listen(PORT, () => "Servidor online na porta " + PORT);
+server.listen(PORT, () => console.log("Servidor online na porta " + PORT));

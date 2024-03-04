@@ -8,7 +8,7 @@ body{
 }
 
 .text-right { 
-    text-align: right!important;
+    text-align: right !important;
 }
 
 .input-entrar{
@@ -222,7 +222,7 @@ body{
 }
 
 .float-right {
-    float: right
+    float: right;
 }
 
 .clearfix:after {
