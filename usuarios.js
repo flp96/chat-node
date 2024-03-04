@@ -36,7 +36,7 @@ function getUsuario(idUsuario) {
 
 module.exports = {
     usuarioEntrarSala,
-    getUsuarioSala,
+    getUsuariosSala,
     mensagemFormatada,
     getUsuario,
     usuarioSairSala
