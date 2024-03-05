@@ -50,7 +50,6 @@ function adicionarNovaMensagem(mensagem) {
     if (mensagem.meuid) {
         minhaMensagem = mensagem.meuid === usuarioStorage.meuId;
     }
-    
 
     var divMensagem = '';
     var divDetalhes = '';
@@ -58,7 +57,6 @@ function adicionarNovaMensagem(mensagem) {
     var quadroMensagens = document.getElementById('quadro-mensagens');
     var li = criarElementoHtml('li', ['clearfix']);
     var span = criarElementoHtml('span', ['message-data-time']);
-
 
     if(minhaMensagem) {
         divMensagem = criarElementoHtml('div', ['message', 'other-message', 'float-right']);
@@ -78,20 +76,21 @@ function adicionarNovaMensagem(mensagem) {
     realizarScrollChat();
 }
 
-socket.on('novaMensagem', (mensagem) => {
-    adicionarNovaMensagem(mensagem);
-});
-
-socket.on('sala-usuarios', ({sala, usuarios}) => {
+socket.on('salaUsuarios', ({sala, usuarios}) => {
     document.getElementById('salaId').innerHTML = sala;
     document.getElementById('listaUsuarios').innerHTML = '';
 
     for (var usuario of usuarios) {
-        criarListaUsuario(usuario.nome);
+        criarListaUsuarios(usuario.nome);
     }
 });
 
-function criarListaUsuario(usuarioNome) {
+socket.on('novaMensagem', (mensagem) => {
+    adicionarNovaMensagem(mensagem);
+});
+
+
+function criarListaUsuarios(usuarioNome) {
     var listaUsuarios = document.getElementById('listaUsuarios');
     var liUsuario = criarElementoHtml('li', ['clearfix']);
     var divDescricaoUsuario = criarElementoHtml('div', ['about']);

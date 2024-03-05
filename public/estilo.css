@@ -10,7 +10,6 @@ body{
 .text-right { 
     text-align: right !important;
 }
-
 .input-entrar{
     margin-top: 50px;
 }
@@ -222,7 +221,7 @@ body{
 }
 
 .float-right {
-    float: right;
+    float: right !important;
 }
 
 .clearfix:after {
